@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro Ernesto | Software Engineer</title>
+    <meta
+      name="description"
+      content="Pedro Ernesto — Software Engineer building backend systems, Android experiences, on-device AI, and payment platforms at Samsung Research Brazil (SiDi)."
+    />
+    <meta name="author" content="Pedro Ernesto" />
+    <meta
+      name="keywords"
+      content="Pedro Ernesto, Software Engineer, Backend, Android, Java, Kotlin, Spring Boot, Kafka, AWS, Samsung Wallet, Pix, Lucene, TensorFlow Lite, On-device AI"
+    />
+    <meta property="og:title" content="Pedro Ernesto | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Building reliable software across backend systems, mobile experiences, and AI-assisted engineering."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/PedrocaOBanido" />
+    <meta
+      property="og:image"
+      content="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230b0f14'/%3E%3Crect x='48' y='48' width='1104' height='534' rx='28' fill='%23131922' stroke='%23e23d3d' stroke-width='4'/%3E%3Ctext x='88' y='186' fill='%236ec6ff' font-family='Rajdhani,Arial,sans-serif' font-size='72' font-weight='700'%3EPedro Ernesto%3C/text%3E%3Ctext x='88' y='254' fill='%23f6da63' font-family='JetBrains Mono,monospace' font-size='28'%3ESoftware Engineer • Backend %26 Android • Samsung Research Brazil%3C/text%3E%3Ctext x='88' y='354' fill='%23e0d0d0' font-family='Inter,Arial,sans-serif' font-size='26'%3EReliable software for payments, on-device AI, and distributed systems.%3C/text%3E%3C/svg%3E"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0b0f14" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simple-icons-font@v13/font/simple-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Rajdhani', 'Electrolize', 'Exo 2', 'sans-serif'],
+              ui: ['Rajdhani', 'Electrolize', 'Exo 2', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              brand: {
+                400: '#6ec6ff',
+                500: '#3eea9a',
+                600: '#e23d3d',
+                700: '#f6da63',
+                800: '#ffb454',
+                900: '#b98eff',
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --cp-red-strong: #e23d3d;
+        --cp-red: #e66a6a;
+        --cp-red-muted: #b86c6c;
+        --cp-red-faint: #7a4747;
+        --cp-blue: #6ec6ff;
+        --cp-blue-hover: #9ad9ff;
+        --cp-green: #3eea9a;
+        --cp-green-hover: #73f1b9;
+        --cp-gold: #f6da63;
+        --cp-gold-dim: #caa94a;
+        --cp-amber: #ffb454;
+        --cp-violet: #b98eff;
+        --bg-primary: #0b0f14;
+        --bg-secondary: #131922;
+        --bg-hover: #1d2531;
+        --glass: rgba(19, 25, 34, 0.9);
+        --body-text: #e0d0d0;
+        --muted-text: #b86c6c;
+        --faint-text: #7a4747;
+        --focus-ring: rgba(62, 234, 154, 0.6);
+      }
+
+      html:not(.dark) {
+        --bg-primary: #f5f1ee;
+        --bg-secondary: #fffaf8;
+        --bg-hover: #ece4e0;
+        --glass: rgba(255, 250, 248, 0.9);
+        --body-text: #2b1f20;
+        --muted-text: #8e6262;
+        --faint-text: #a67d7d;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg-primary);
+        color: var(--body-text);
+        font-family: 'Inter', sans-serif;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+
+      section {
+        scroll-margin-top: 96px;
+      }
+
+      ::selection {
+        background: rgba(110, 198, 255, 0.22);
+        color: #fff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(226, 61, 61, 0.82);
+        border-radius: 999px;
+      }
+
+      .bg-drift {
+        background:
+          radial-gradient(circle at 18% 20%, rgba(226, 61, 61, 0.22), transparent 30%),
+          radial-gradient(circle at 82% 18%, rgba(110, 198, 255, 0.15), transparent 25%),
+          radial-gradient(circle at 72% 78%, rgba(62, 234, 154, 0.1), transparent 26%),
+          linear-gradient(135deg, #3a1217 0%, #1b0f12 38%, #0b0f14 100%);
+        background-size: 200% 200%;
+        animation: drift 60s linear infinite alternate;
+      }
+
+      .grid-overlay {
+        background-image:
+          linear-gradient(rgba(226, 61, 61, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(226, 61, 61, 0.08) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 95%);
+      }
+
+      .glass {
+        background: var(--glass);
+        border: 1px solid rgba(226, 61, 61, 0.3);
+        border-left: 4px solid var(--cp-red-strong);
+        box-shadow: 0 0 8px rgba(226, 61, 61, 0.15);
+        backdrop-filter: blur(18px);
+      }
+
+      .glass:hover {
+        border-color: rgba(226, 61, 61, 0.55);
+        box-shadow: 0 0 14px rgba(226, 61, 61, 0.2);
+      }
+
+      .section-label {
+        color: var(--cp-gold);
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      .prompt-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.7rem;
+        padding: 0.15rem 0.5rem;
+        background: rgba(226, 61, 61, 0.18);
+        border: 1px solid rgba(246, 218, 99, 0.45);
+        color: var(--cp-gold);
+        border-radius: 2px;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+      }
+
+      .section-title {
+        position: relative;
+        padding-left: 0.1rem;
+        color: var(--cp-blue);
+        font-family: 'Rajdhani', 'Electrolize', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        text-shadow: 0 0 10px rgba(110, 198, 255, 0.24);
+      }
+
+      .section-title::before {
+        content: '▍';
+        color: var(--cp-red-strong);
+        margin-right: 0.35rem;
+        text-shadow: 0 0 10px rgba(226, 61, 61, 0.35);
+      }
+
+      .section-title::after {
+        content: '';
+        display: block;
+        height: 2px;
+        margin-top: 0.55rem;
+        background: linear-gradient(90deg, var(--cp-blue), transparent 82%);
+      }
+
+      .section-subtitle {
+        color: var(--muted-text);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.8;
+        max-width: 56rem;
+      }
+
+      .glow-blue {
+        text-shadow: 0 0 14px rgba(110, 198, 255, 0.24);
+      }
+
+      .glow-green {
+        text-shadow: 0 0 12px rgba(62, 234, 154, 0.18);
+      }
+
+      .hero-copy {
+        color: var(--body-text);
+        line-height: 1.9;
+      }
+
+      .code-frame {
+        border: 1px solid rgba(226, 61, 61, 0.45);
+        box-shadow: 0 0 18px rgba(226, 61, 61, 0.12);
+        background: #090d12;
+      }
+
+      .code-keyword {
+        color: var(--cp-amber);
+      }
+
+      .code-string {
+        color: var(--cp-green);
+      }
+
+      .code-type {
+        color: var(--cp-blue);
+      }
+
+      .code-punct {
+        color: var(--cp-red-muted);
+      }
+
+      .code-var {
+        color: var(--cp-red);
+      }
+
+      .skill-chip {
+        border: 1px solid rgba(226, 61, 61, 0.3);
+        background: var(--bg-secondary);
+        color: var(--cp-red);
+        font-family: 'JetBrains Mono', monospace;
+        border-radius: 2px;
+      }
+
+      .proficiency-strong {
+        border-color: rgba(246, 218, 99, 0.65);
+        color: var(--cp-gold);
+        box-shadow: 0 0 10px rgba(246, 218, 99, 0.08);
+      }
+
+      .proficiency-professional {
+        border-color: rgba(226, 61, 61, 0.55);
+        color: var(--cp-red);
+      }
+
+      .proficiency-familiar {
+        border-color: rgba(122, 71, 71, 0.6);
+        color: var(--cp-red-faint);
+      }
+
+      .cta-primary {
+        background: rgba(62, 234, 154, 0.14);
+        border: 1px solid rgba(62, 234, 154, 0.55);
+        color: var(--cp-green);
+      }
+
+      .cta-secondary {
+        background: transparent;
+        border: 1px solid rgba(226, 61, 61, 0.45);
+        color: var(--cp-red);
+      }
+
+      .cta-primary:hover,
+      .cta-secondary:hover,
+      .icon-btn:hover,
+      .nav-link:hover,
+      .contact-link:hover {
+        box-shadow: 0 0 16px rgba(62, 234, 154, 0.2);
+      }
+
+      .contact-card {
+        background: var(--glass);
+        border: 1px solid rgba(226, 61, 61, 0.3);
+        border-left: 4px solid var(--cp-red-strong);
+      }
+
+      .icon-btn {
+        border: 1px solid rgba(226, 61, 61, 0.35);
+        background: rgba(19, 25, 34, 0.9);
+        color: var(--cp-blue);
+      }
+
+      .nav-link {
+        color: rgba(224, 208, 208, 0.82);
+        transition: color 160ms ease, box-shadow 160ms ease;
+      }
+
+      .nav-link:hover {
+        color: var(--cp-blue);
+      }
+
+      .focusable:focus-visible,
+      a:focus-visible,
+      button:focus-visible {
+        outline: 1px solid rgba(62, 234, 154, 0.8);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px rgba(62, 234, 154, 0.16);
+      }
+
+      .section-rule {
+        border: 0;
+        height: 1px;
+        background: linear-gradient(90deg, var(--cp-red-strong), transparent);
+      }
+
+      @keyframes drift {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bg-drift {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <div class="fixed inset-0 -z-20 bg-drift"></div>
+    <div class="fixed inset-0 -z-10 grid-overlay opacity-35"></div>
+    <div class="fixed inset-0 -z-10 bg-gradient-to-b from-[#0b0f14]/30 via-transparent to-[#0b0f14]"></div>
+
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-[rgba(226,61,61,0.22)] bg-[rgba(11,15,20,0.88)] backdrop-blur-xl dark:bg-[rgba(11,15,20,0.88)]">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        <a
+          href="#hero"
+          class="font-display text-xl font-bold tracking-[0.08em] text-[var(--cp-blue)] transition hover:text-[var(--cp-blue-hover)]"
+          >Pedro<span class="text-[var(--cp-red-strong)]">.</span></a
+        >
+
+        <nav class="hidden items-center gap-8 font-mono text-sm lg:flex">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <div class="hidden items-center gap-2 lg:flex">
+            <a
+              href="https://github.com/PedrocaOBanido"
+              target="_blank"
+              rel="noreferrer"
+              class="icon-btn rounded-[2px] p-2 transition hover:border-[rgba(110,198,255,0.55)] hover:text-[var(--cp-blue-hover)]"
+              aria-label="GitHub PedrocaOBanido"
+            >
+              <i class="si si-github text-lg"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pedro-ernesto-goncalves/"
+              target="_blank"
+              rel="noreferrer"
+              class="icon-btn rounded-[2px] p-2 text-[var(--cp-gold)] transition hover:border-[rgba(246,218,99,0.55)] hover:text-[var(--cp-gold)]"
+              aria-label="LinkedIn pedro-ernesto-goncalves"
+            >
+              <i class="si si-linkedin text-lg"></i>
+            </a>
+          </div>
+
+          <button
+            id="themeToggle"
+            class="icon-btn rounded-[2px] p-2 transition hover:border-[rgba(110,198,255,0.55)] hover:text-[var(--cp-blue-hover)]"
+            aria-label="Toggle theme"
+            type="button"
+          >
+            <svg id="themeIcon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m8.5-8.5h1M3.5 12h1m13.435 5.435.707.707M5.858 5.858l.707.707m0 11.314-.707.707m11.314-11.314.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+
+          <button
+            id="menuButton"
+            class="icon-btn rounded-[2px] p-2 transition hover:border-[rgba(226,61,61,0.55)] hover:text-[var(--cp-red)] lg:hidden"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            type="button"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hidden border-t border-[rgba(226,61,61,0.16)] bg-[rgba(11,15,20,0.96)] lg:hidden">
+        <div class="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-6 font-mono text-sm">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://github.com/PedrocaOBanido" target="_blank" rel="noreferrer" class="nav-link text-[var(--cp-blue)]">
+              <i class="si si-github text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/pedro-ernesto-goncalves/" target="_blank" rel="noreferrer" class="nav-link text-[var(--cp-gold)]">
+              <i class="si si-linkedin text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative pt-28 lg:pt-32">
+      <section id="hero" class="px-6 pb-20 pt-8 lg:px-8 lg:pb-28 lg:pt-12">
+        <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <div class="inline-flex items-center gap-3 rounded-[2px] border border-[rgba(246,218,99,0.55)] bg-[rgba(226,61,61,0.16)] px-4 py-2 font-mono text-sm text-[var(--cp-gold)]">
+              <span class="prompt-badge">&gt;_</span>
+              <span>Software Engineer • Backend &amp; Android</span>
+            </div>
+
+            <h1 class="glow-blue mt-6 max-w-4xl font-display text-4xl font-extrabold uppercase leading-[0.95] tracking-[0.05em] text-[var(--cp-blue)] sm:text-5xl lg:text-7xl">
+              Building reliable software across backend
+              systems, mobile experiences, and AI-assisted
+              engineering.
+            </h1>
+
+            <p class="hero-copy mt-6 max-w-3xl text-base sm:text-lg lg:text-xl">
+              I'm Pedro Ernesto, a software engineer working across backend systems and Android development at Samsung Research Brazil (SiDi). I build event-driven payment platforms and on-device AI features, contributing to products used by over 100 million users. I combine deep technical work with a pragmatic approach — clarity over ceremony, boundaries that enable speed.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#experience" class="cta-primary rounded-[2px] px-5 py-3 font-mono text-sm font-semibold transition hover:shadow-[0_0_18px_rgba(62,234,154,0.18)]">View Experience</a>
+              <a href="https://github.com/PedrocaOBanido" target="_blank" rel="noreferrer" class="cta-secondary rounded-[2px] px-5 py-3 font-mono text-sm font-semibold transition hover:shadow-[0_0_18px_rgba(226,61,61,0.16)]">GitHub</a>
+              <a href="https://www.linkedin.com/in/pedro-ernesto-goncalves/" target="_blank" rel="noreferrer" class="cta-secondary rounded-[2px] px-5 py-3 font-mono text-sm font-semibold transition hover:shadow-[0_0_18px_rgba(226,61,61,0.16)]">LinkedIn</a>
+            </div>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              <div class="glass rounded-[2px] p-4">
+                <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">Experience</p>
+                <p class="mt-2 font-display text-3xl font-bold text-[var(--cp-gold)]">1+ Year</p>
+              </div>
+              <div class="glass rounded-[2px] p-4">
+                <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">Reach</p>
+                <p class="mt-2 font-display text-3xl font-bold text-[var(--cp-blue)]">100M+ Users</p>
+              </div>
+              <div class="glass rounded-[2px] p-4">
+                <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">Adoption</p>
+                <p class="mt-2 font-display text-3xl font-bold text-[var(--cp-green)]">300+ Engineers</p>
+              </div>
+              <div class="glass rounded-[2px] p-4">
+                <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">Focus</p>
+                <p class="mt-2 font-display text-3xl font-bold text-[var(--cp-violet)]">Samsung Wallet</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="code-frame rounded-[2px] p-5 lg:p-6">
+              <div class="flex items-center gap-2 border-b border-[rgba(226,61,61,0.28)] pb-3 font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">
+                <span class="h-2.5 w-2.5 rounded-full bg-[var(--cp-red-strong)]"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-[var(--cp-gold)]"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-[var(--cp-green)]"></span>
+                <span class="ml-2">object Pedro : SoftwareEngineer()</span>
+              </div>
+
+              <pre class="mt-4 overflow-x-auto font-mono text-sm leading-7 text-[var(--body-text)]"><code><span class="code-keyword">object</span> <span class="code-type">Pedro</span> <span class="code-punct">:</span> <span class="code-type">SoftwareEngineer</span><span class="code-punct">()</span> <span class="code-punct">{</span>
+  <span class="code-keyword">val</span> <span class="code-var">expertise</span> <span class="code-punct">=</span> listOf<span class="code-punct">(</span>
+    <span class="code-string">"Backend Architecture"</span><span class="code-punct">,</span>
+    <span class="code-string">"Android Engineering"</span><span class="code-punct">,</span>
+    <span class="code-string">"Distributed Systems"</span><span class="code-punct">,</span>
+    <span class="code-string">"On-device AI"</span><span class="code-punct">,</span>
+    <span class="code-string">"Payment Technology"</span>
+  <span class="code-punct">)</span>
+
+  <span class="code-keyword">val</span> <span class="code-var">technologies</span> <span class="code-punct">=</span> listOf<span class="code-punct">(</span>
+    <span class="code-string">"Java"</span><span class="code-punct">,</span> <span class="code-string">"Kotlin"</span><span class="code-punct">,</span> <span class="code-string">"Spring Boot"</span><span class="code-punct">,</span>
+    <span class="code-string">"TensorFlow Lite"</span><span class="code-punct">,</span> <span class="code-string">"Kafka"</span><span class="code-punct">,</span> <span class="code-string">"AWS"</span>
+  <span class="code-punct">)</span>
+
+  <span class="code-keyword">val</span> <span class="code-var">domains</span> <span class="code-punct">=</span> listOf<span class="code-punct">(</span>
+    <span class="code-string">"Digital Wallets"</span><span class="code-punct">,</span>
+    <span class="code-string">"On-device Search"</span><span class="code-punct">,</span>
+    <span class="code-string">"AI-assisted Engineering"</span>
+  <span class="code-punct">)</span>
+<span class="code-punct">}</span></code></pre>
+            </div>
+
+            <div class="glass rounded-[2px] p-5 lg:p-6">
+              <p class="section-label">&gt;_ Recent focus</p>
+              <h2 class="glow-green mt-3 font-display text-3xl font-bold text-[var(--cp-green)]">
+                Digital Wallet + On-device Semantic Search at Samsung Research Brazil
+              </h2>
+              <p class="mt-3 leading-8 text-[var(--body-text)]">
+                Backend services, Android development, Pix integration, Lucene-based search, on-device LLMs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8"><hr class="section-rule" /></div>
+
+      <section id="about" class="px-6 py-20 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div>
+            <p class="section-label"><span class="prompt-badge">&gt;_</span> ABOUT ME</p>
+            <h2 class="section-title mt-3 text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Engineering products that scale, teams that deliver,
+              and platforms that last.
+            </h2>
+            <p class="section-subtitle mt-5 text-lg lg:text-xl">
+              I work across backend and Android, building event-driven systems and privacy-preserving AI features. My focus is on correct, observable, and maintainable software delivered without unnecessary complexity.
+            </p>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+            <article class="glass rounded-[2px] p-6 lg:p-8">
+              <h3 class="glow-green font-display text-3xl font-bold text-[var(--cp-green)]">Who I Am</h3>
+              <div class="mt-6 space-y-5 leading-8 text-[var(--body-text)]">
+                <p>
+                  I'm a software engineer at Samsung Research Brazil (SiDi), working across backend services and Android applications. My experience spans event-driven architectures, digital payments (Pix), on-device semantic search, and AI-assisted engineering workflows.
+                </p>
+                <p>
+                  While many engineers specialize in either backend or mobile, I work across both — designing end-to-end solutions from distributed microservices to Android UX. This dual perspective helps me build systems where every layer works together.
+                </p>
+                <p>
+                  Beyond code, I've become a technical reference for engineers on my team and helped design the adoption of AI-assisted engineering practices that scaled from a 5-person pilot to approximately 300 developers across the organization.
+                </p>
+              </div>
+
+              <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-4">
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">Education</p>
+                  <p class="mt-2 leading-7 text-[var(--body-text)]">
+                    Technology degree in Systems Analysis and Development — Estácio (expected completion October 2026). Also: Software Engineering at UFAM (incomplete).
+                  </p>
+                </div>
+                <div class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-4">
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-red-muted)]">Languages</p>
+                  <p class="mt-2 leading-7 text-[var(--body-text)]">
+                    Portuguese (native) · English (professional working proficiency)
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <aside class="glass rounded-[2px] p-6 lg:p-8">
+              <h3 class="glow-green font-display text-3xl font-bold text-[var(--cp-green)]">Core Strengths</h3>
+              <ol class="mt-6 space-y-4">
+                <li class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-4">
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-gold)]">1. Backend Architecture</p>
+                  <p class="mt-2 leading-7 text-[var(--body-text)]">Event-driven, distributed, Spring Boot.</p>
+                </li>
+                <li class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-4">
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-gold)]">2. Android Engineering</p>
+                  <p class="mt-2 leading-7 text-[var(--body-text)]">Kotlin, Compose, on-device AI.</p>
+                </li>
+                <li class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-4">
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-gold)]">3. Search &amp; AI</p>
+                  <p class="mt-2 leading-7 text-[var(--body-text)]">Lucene, semantic search, on-device LLMs.</p>
+                </li>
+                <li class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-4">
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cp-gold)]">4. Engineering Practices</p>
+                  <p class="mt-2 leading-7 text-[var(--body-text)]">TDD, AI-assisted workflows, code review.</p>
+                </li>
+              </ol>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8"><hr class="section-rule" /></div>
+
+      <section class="px-6 py-20 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div>
+            <p class="section-label"><span class="prompt-badge">&gt;_</span> ENGINEERING PHILOSOPHY</p>
+            <h2 class="section-title mt-3 text-4xl leading-tight sm:text-5xl lg:text-6xl">Building correct, observable, and pragmatic software.</h2>
+            <p class="section-subtitle mt-5 text-lg lg:text-xl">
+              I prefer simple systems with explicit responsibilities, observable behavior, and abstractions justified by recurring problems — not by pattern books.
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="glass rounded-[2px] p-6">
+              <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Architecture When Needed</h3>
+              <p class="mt-4 leading-8 text-[var(--body-text)]">The right architecture emerges from understanding the problem, not from applying a template. I design boundaries that serve the domain.</p>
+            </article>
+            <article class="glass rounded-[2px] p-6">
+              <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Boundaries Enable Speed</h3>
+              <p class="mt-4 leading-8 text-[var(--body-text)]">Well-defined contracts and clear ownership let teams move fast safely. Good boundaries are the foundation of maintainable systems.</p>
+            </article>
+            <article class="glass rounded-[2px] p-6">
+              <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Clarity Over Ceremony</h3>
+              <p class="mt-4 leading-8 text-[var(--body-text)]">Abstractions are justified when they reduce cognitive load, not when they add indirection. If a pattern doesn't clarify the system, it doesn't belong.</p>
+            </article>
+            <article class="glass rounded-[2px] p-6">
+              <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">AI for Acceleration, Human for Ownership</h3>
+              <p class="mt-4 leading-8 text-[var(--body-text)]">AI speeds up exploration and boilerplate. Humans own planning, testing, review, and architectural decisions. Never commit code you don't understand.</p>
+            </article>
+            <article class="glass rounded-[2px] p-6">
+              <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Code-First Exploration</h3>
+              <p class="mt-4 leading-8 text-[var(--body-text)]">When approaching unfamiliar systems, I read the code and tests, trace a request end-to-end, then ask targeted questions. The code is the source of truth.</p>
+            </article>
+            <article class="glass rounded-[2px] p-6">
+              <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Documentation and Pairing</h3>
+              <p class="mt-4 leading-8 text-[var(--body-text)]">I invest in writing things down and pairing with engineers who have less context. A well-explained system pays back in fewer mistakes and faster autonomy.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8"><hr class="section-rule" /></div>
+
+      <section id="skills" class="px-6 py-20 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div>
+            <p class="section-label"><span class="prompt-badge">&gt;_</span> CORE TECHNICAL SKILLS</p>
+            <h2 class="section-title mt-3 text-4xl leading-tight sm:text-5xl lg:text-6xl">Full-stack engineering with backend-first expertise.</h2>
+            <p class="section-subtitle mt-5 text-lg lg:text-xl">
+              I specialize in backend architecture and Android development, with growing depth in on-device AI and search.
+            </p>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="glass rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Backend Engineering</h3>
+                <span class="skill-chip proficiency-strong rounded-[2px] px-3 py-1 text-xs font-semibold">Strong</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="skill-chip px-3 py-1 text-sm">Java</span>
+                <span class="skill-chip px-3 py-1 text-sm">Kotlin</span>
+                <span class="skill-chip px-3 py-1 text-sm">Spring Boot</span>
+                <span class="skill-chip px-3 py-1 text-sm">REST APIs</span>
+                <span class="skill-chip px-3 py-1 text-sm">Kafka</span>
+                <span class="skill-chip px-3 py-1 text-sm">PostgreSQL</span>
+                <span class="skill-chip px-3 py-1 text-sm">MongoDB</span>
+                <span class="skill-chip px-3 py-1 text-sm">AWS</span>
+                <span class="skill-chip px-3 py-1 text-sm">Docker</span>
+                <span class="skill-chip px-3 py-1 text-sm">Event-driven Architecture</span>
+                <span class="skill-chip px-3 py-1 text-sm">Distributed Systems</span>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Android Engineering</h3>
+                <span class="skill-chip proficiency-strong rounded-[2px] px-3 py-1 text-xs font-semibold">Strong</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="skill-chip px-3 py-1 text-sm">Kotlin</span>
+                <span class="skill-chip px-3 py-1 text-sm">Jetpack Compose</span>
+                <span class="skill-chip px-3 py-1 text-sm">Coroutines</span>
+                <span class="skill-chip px-3 py-1 text-sm">Flow</span>
+                <span class="skill-chip px-3 py-1 text-sm">Room</span>
+                <span class="skill-chip px-3 py-1 text-sm">Hilt</span>
+                <span class="skill-chip px-3 py-1 text-sm">Clean Architecture</span>
+                <span class="skill-chip px-3 py-1 text-sm">Modularization</span>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Data &amp; Search</h3>
+                <span class="skill-chip proficiency-strong rounded-[2px] px-3 py-1 text-xs font-semibold">Strong</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="skill-chip px-3 py-1 text-sm">Lucene</span>
+                <span class="skill-chip px-3 py-1 text-sm">Semantic Search</span>
+                <span class="skill-chip px-3 py-1 text-sm">On-device LLMs</span>
+                <span class="skill-chip px-3 py-1 text-sm">TensorFlow Lite</span>
+                <span class="skill-chip px-3 py-1 text-sm">SentencePiece BPE</span>
+                <span class="skill-chip px-3 py-1 text-sm">Hybrid Retrieval</span>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">AI &amp; Engineering Practices</h3>
+                <span class="skill-chip proficiency-strong rounded-[2px] px-3 py-1 text-xs font-semibold">Strong</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="skill-chip px-3 py-1 text-sm">AI-assisted Development</span>
+                <span class="skill-chip px-3 py-1 text-sm">Agentic Workflows</span>
+                <span class="skill-chip px-3 py-1 text-sm">Context Management</span>
+                <span class="skill-chip px-3 py-1 text-sm">TDD</span>
+                <span class="skill-chip px-3 py-1 text-sm">Code Review</span>
+                <span class="skill-chip px-3 py-1 text-sm">Process Design</span>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Dev Tools</h3>
+                <span class="skill-chip proficiency-professional rounded-[2px] px-3 py-1 text-xs font-semibold">Professional Experience</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="skill-chip px-3 py-1 text-sm">Git</span>
+                <span class="skill-chip px-3 py-1 text-sm">GitHub</span>
+                <span class="skill-chip px-3 py-1 text-sm">Gerrit</span>
+                <span class="skill-chip px-3 py-1 text-sm">Gradle</span>
+                <span class="skill-chip px-3 py-1 text-sm">Android Studio</span>
+                <span class="skill-chip px-3 py-1 text-sm">IntelliJ</span>
+                <span class="skill-chip px-3 py-1 text-sm">WSL</span>
+                <span class="skill-chip px-3 py-1 text-sm">Docker</span>
+                <span class="skill-chip px-3 py-1 text-sm">CI/CD</span>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-green)]">Observability &amp; Databases</h3>
+                <span class="skill-chip proficiency-professional rounded-[2px] px-3 py-1 text-xs font-semibold">Professional Experience</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="skill-chip px-3 py-1 text-sm">Logging</span>
+                <span class="skill-chip px-3 py-1 text-sm">Metrics</span>
+                <span class="skill-chip px-3 py-1 text-sm">Tracing</span>
+                <span class="skill-chip px-3 py-1 text-sm">Room</span>
+                <span class="skill-chip px-3 py-1 text-sm">SQLite</span>
+                <span class="skill-chip px-3 py-1 text-sm">PostgreSQL</span>
+                <span class="skill-chip px-3 py-1 text-sm">MongoDB</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8"><hr class="section-rule" /></div>
+
+      <section id="experience" class="px-6 py-20 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div>
+            <p class="section-label"><span class="prompt-badge">&gt;_</span> PROFESSIONAL EXPERIENCE</p>
+            <h2 class="section-title mt-3 text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Building products used by millions and leading engineering practices across teams.
+            </h2>
+            <p class="section-subtitle mt-5 text-lg lg:text-xl">
+              My career combines backend system design with Android engineering, enabling me to build complete solutions — from cloud infrastructure to mobile applications.
+            </p>
+          </div>
+
+          <article class="glass rounded-[2px] p-6 lg:p-8">
+            <div class="flex flex-col gap-4 border-b border-[rgba(226,61,61,0.2)] pb-6 lg:flex-row lg:items-start lg:justify-between">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--cp-red-muted)]">Samsung Research Brazil (SiDi) | July 2025 — Present</p>
+                <h3 class="mt-3 font-display text-3xl font-bold text-[var(--cp-blue)]">Software Engineer</h3>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="rounded-[2px] border border-[rgba(62,234,154,0.45)] px-3 py-1 font-mono text-xs text-[var(--cp-green)]">Most Recent</span>
+                  <span class="rounded-[2px] border border-[rgba(226,61,61,0.35)] px-3 py-1 font-mono text-xs text-[var(--cp-red)]">Samsung Wallet</span>
+                  <span class="rounded-[2px] border border-[rgba(226,61,61,0.35)] px-3 py-1 font-mono text-xs text-[var(--cp-red)]">Backend</span>
+                  <span class="rounded-[2px] border border-[rgba(226,61,61,0.35)] px-3 py-1 font-mono text-xs text-[var(--cp-red)]">Android</span>
+                  <span class="rounded-[2px] border border-[rgba(226,61,61,0.35)] px-3 py-1 font-mono text-xs text-[var(--cp-red)]">Payments</span>
+                  <span class="rounded-[2px] border border-[rgba(226,61,61,0.35)] px-3 py-1 font-mono text-xs text-[var(--cp-red)]">On-device AI</span>
+                </div>
+              </div>
+              <p class="max-w-xl text-sm leading-7 text-[var(--muted-text)]">
+                Developing backend services and Android features for Samsung Wallet and on-device search at Samsung Research Brazil (SiDi). Working across payment flows (Pix), event-driven architectures, and privacy-preserving AI features used by millions of customers.
+              </p>
+            </div>
+
+            <div class="mt-6 grid gap-6 lg:grid-cols-2">
+              <div class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-5">
+                <h4 class="font-mono text-sm uppercase tracking-[0.2em] text-[var(--cp-gold)]">Backend &amp; Payments</h4>
+                <ul class="mt-4 space-y-3 leading-8 text-[var(--body-text)]">
+                  <li>Implemented Pix payment flows using Spring Boot, Kafka, and event-driven architecture patterns</li>
+                  <li>Migrated polling-based state checks to event-driven signals between backend services and the Android client</li>
+                  <li>Ensured state consistency across distributed services with idempotency, event versioning, and client-side reconciliation</li>
+                  <li>Reduced unnecessary network requests and improved payment confirmation latency</li>
+                </ul>
+              </div>
+
+              <div class="rounded-[2px] border border-[rgba(226,61,61,0.25)] bg-[var(--bg-secondary)] p-5">
+                <h4 class="font-mono text-sm uppercase tracking-[0.2em] text-[var(--cp-gold)]">Android, AI &amp; Engineering</h4>
+                <ul class="mt-4 space-y-3 leading-8 text-[var(--body-text)]">
+                  <li>Designed and built on-device semantic search using Lucene + TensorFlow Lite + custom token encoding with SentencePiece BPE</li>
+                  <li>Created hybrid retrieval system (keyword + vector) for device settings, files, and native Samsung app content</li>
+                  <li>All processing on-device — zero user data sent to external services</li>
+                  <li>Researched, designed, and piloted AI-assisted engineering workflows adopted across ~300 developers</li>
+                  <li>Became technical reference for team, providing onboarding and knowledge sharing for engineers new to the codebase</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8"><hr class="section-rule" /></div>
+
+      <section id="projects" class="px-6 py-20 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div>
+            <p class="section-label"><span class="prompt-badge">&gt;_</span> FEATURED CASE STUDIES</p>
+            <h2 class="section-title mt-3 text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Systems designed for correctness, privacy, and real-world impact.
+            </h2>
+            <p class="section-subtitle mt-5 text-lg lg:text-xl">
+              Selected engineering work covering payments, on-device AI, and AI-assisted engineering at scale.
+            </p>
+          </div>
+
+          <div class="grid gap-6 xl:grid-cols-2">
+            <article class="glass rounded-[2px] p-6 lg:p-7">
+              <div class="flex items-start justify-between gap-4 border-b border-[rgba(226,61,61,0.18)] pb-4">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--cp-red-muted)]">Case Study 1</p>
+                  <h3 class="mt-2 font-display text-3xl font-bold text-[var(--cp-green)]">Event-Driven Payment Systems 💳</h3>
+                </div>
+                <span class="rounded-[2px] border border-[rgba(62,234,154,0.45)] px-3 py-1 font-mono text-xs text-[var(--cp-green)]">Payments</span>
+              </div>
+              <div class="mt-5 space-y-4 leading-8 text-[var(--body-text)]">
+                <p><span class="text-[var(--cp-gold)] font-semibold">Problem:</span> Mobile app polled for Pix payment status — delayed UI updates, wasted bandwidth, scaling pressure on backend at 100M+ user scale.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Solution:</span> Replaced polling with Kafka-based event streaming. Backend emits state-change events; Android receives push notifications and refreshes only when needed.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Key decisions:</span> Kafka for event transport, REST for data fetch, event versioning for out-of-order delivery, idempotency keys for deduplication.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Impact:</span> Fewer network requests, faster state transitions, reduced backend load, fewer stale-state errors.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Tech:</span> Kotlin, Android, Java, Spring Boot, Kafka, PostgreSQL, AWS</p>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6 lg:p-7">
+              <div class="flex items-start justify-between gap-4 border-b border-[rgba(226,61,61,0.18)] pb-4">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--cp-red-muted)]">Case Study 2</p>
+                  <h3 class="mt-2 font-display text-3xl font-bold text-[var(--cp-green)]">On-Device Semantic Search 🔍</h3>
+                </div>
+                <span class="rounded-[2px] border border-[rgba(246,218,99,0.45)] px-3 py-1 font-mono text-xs text-[var(--cp-gold)]">Privacy</span>
+              </div>
+              <div class="mt-5 space-y-4 leading-8 text-[var(--body-text)]">
+                <p><span class="text-[var(--cp-gold)] font-semibold">Problem:</span> Traditional keyword search couldn't handle natural language queries for device settings, files, and Samsung native app content (gallery, etc.).</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Solution:</span> Hybrid retrieval — Lucene for keyword indexing + TFLite embedding model for semantic similarity. All on-device.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Key decisions:</span> Quantized model for latency, pre-computed embeddings at indexing time, two-stage retrieval (fast Lucene → precise semantic), SentencePiece BPE + custom token encoding, zero network calls.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Impact:</span> Improved search relevance over keyword-only baseline, fully privacy-preserving architecture, works offline.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Tech:</span> Kotlin, Android, Lucene, TensorFlow Lite, SentencePiece BPE</p>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6 lg:p-7">
+              <div class="flex items-start justify-between gap-4 border-b border-[rgba(226,61,61,0.18)] pb-4">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--cp-red-muted)]">Case Study 3</p>
+                  <h3 class="mt-2 font-display text-3xl font-bold text-[var(--cp-green)]">AI-Assisted Engineering at Scale 🤖</h3>
+                </div>
+                <span class="rounded-[2px] border border-[rgba(110,198,255,0.45)] px-3 py-1 font-mono text-xs text-[var(--cp-blue)]">Process</span>
+              </div>
+              <div class="mt-5 space-y-4 leading-8 text-[var(--body-text)]">
+                <p><span class="text-[var(--cp-gold)] font-semibold">Problem:</span> Low and inconsistent AI tool adoption across the organization due to security concerns, no standards, and unclear workflows.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Role:</span> Technical researcher and process designer.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Solution:</span> Evaluated tools, designed TDD-integrated AI workflows, context management rules, review checklists, model selection criteria, and token budget guidelines.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Adoption:</span> Pilot (5 devs) → Squad (25) → Organization-wide (~300).</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Division of ownership:</span> I owned hands-on research, tool evaluation, pilot execution, workflow design, and documentation. Our Staff Engineer owned proposal formalization, corporate alignment, security review navigation, and stakeholder management with senior leadership.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Results:</span> Standardized practices, improved code review quality, reduced vendor dependence through model-agnostic workflows.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Tech:</span> AI Coding Assistants, Context Management, TDD, Code Review</p>
+              </div>
+            </article>
+
+            <article class="glass rounded-[2px] p-6 lg:p-7">
+              <div class="flex items-start justify-between gap-4 border-b border-[rgba(226,61,61,0.18)] pb-4">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--cp-red-muted)]">Case Study 4</p>
+                  <h3 class="mt-2 font-display text-3xl font-bold text-[var(--cp-green)]">ReaderParser → Agentic Development Setup 🛠️</h3>
+                </div>
+                <span class="rounded-[2px] border border-[rgba(226,61,61,0.35)] px-3 py-1 font-mono text-xs text-[var(--cp-red)]">Foundations</span>
+              </div>
+              <div class="mt-5 space-y-4 leading-8 text-[var(--body-text)]">
+                <p><span class="text-[var(--cp-gold)] font-semibold">Problem:</span> Needed a systematic approach to AI-assisted development that balanced speed with engineering quality and reproducibility.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Approach:</span> Built ReaderParser as a public GitHub project to study and validate the patterns that would become my agentic development setup — planning workflows, context management, test-first implementation, and review loops.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Real outcome:</span> The patterns validated through ReaderParser informed the AI-assisted engineering workflows later adopted across ~300 developers at Samsung Research. The project served as proof that AI tools, when properly constrained by human-owned planning and review, could accelerate development without compromising quality.</p>
+                <p><span class="text-[var(--cp-gold)] font-semibold">Tech:</span> Kotlin, AI-assisted Development, TDD, Context Management, Git</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-8"><hr class="section-rule" /></div>
+
+      <section id="contact" class="px-6 py-20 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div>
+            <p class="section-label"><span class="prompt-badge">&gt;_</span> GET IN TOUCH</p>
+            <h2 class="section-title mt-3 text-4xl leading-tight sm:text-5xl lg:text-6xl">Let's build something together.</h2>
+            <p class="section-subtitle mt-5 text-lg lg:text-xl">
+              I'm available for remote work or relocation. Reach out if you're building backend systems, Android applications, or AI-assisted engineering workflows.
+            </p>
+          </div>
+
+          <div class="grid gap-4 lg:grid-cols-3">
+            <a class="contact-card rounded-[2px] p-6 transition hover:border-[rgba(110,198,255,0.55)] hover:shadow-[0_0_18px_rgba(110,198,255,0.12)]" href="https://github.com/PedrocaOBanido" target="_blank" rel="noreferrer">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-blue)]">GitHub</h3>
+                <svg class="h-5 w-5 text-[var(--cp-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9m8 0v8"/></svg>
+              </div>
+              <p class="mt-4 font-mono text-sm text-[var(--body-text)]">github.com/PedrocaOBanido</p>
+            </a>
+
+            <a class="contact-card rounded-[2px] p-6 transition hover:border-[rgba(246,218,99,0.55)] hover:shadow-[0_0_18px_rgba(246,218,99,0.12)]" href="https://www.linkedin.com/in/pedro-ernesto-goncalves/" target="_blank" rel="noreferrer">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-blue)]">LinkedIn</h3>
+                <svg class="h-5 w-5 text-[var(--cp-gold)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H9m8 0v8"/></svg>
+              </div>
+              <p class="mt-4 font-mono text-sm text-[var(--body-text)]">linkedin.com/in/pedro-ernesto-goncalves</p>
+            </a>
+
+            <div class="contact-card rounded-[2px] p-6">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="font-display text-2xl font-bold text-[var(--cp-blue)]">Email</h3>
+                <button id="copyEmail" class="icon-btn rounded-[2px] p-2 transition hover:border-[rgba(246,218,99,0.55)] hover:text-[var(--cp-gold)]" type="button" aria-label="Copy email address">
+                  <svg id="copyIcon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+              <a class="contact-link mt-4 block font-mono text-sm text-[var(--body-text)] transition hover:text-[var(--cp-blue)]" href="mailto:pedroernestopgoncalves@gmail.com">pedroernestopgoncalves@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3 font-mono text-sm text-[var(--muted-text)] sm:flex-row sm:items-center sm:justify-between">
+            <p>📍 Manaus, Brazil</p>
+            <p>Availability: Available for remote work or relocation</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[rgba(226,61,61,0.2)] bg-[rgba(11,15,20,0.82)] px-6 py-8 text-center font-mono text-sm text-[var(--muted-text)] backdrop-blur-xl lg:px-8">
+      Pedro Ernesto — Software Engineer | © 2026
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const copyEmail = document.getElementById('copyEmail');
+
+      const sunIcon = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.5-8.5h1M3.5 12h1m13.435 5.435.707.707M5.858 5.858l.707.707m0 11.314-.707.707m11.314-11.314.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      `;
+
+      const moonIcon = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646a9.003 9.003 0 0011.708 11.708z" />
+      `;
+
+      const setTheme = (isDark) => {
+        root.classList.toggle('dark', isDark);
+        themeIcon.innerHTML = isDark ? moonIcon : sunIcon;
+        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+        localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+      };
+
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      setTheme(savedTheme ? savedTheme === 'dark' : true);
+
+      themeToggle.addEventListener('click', () => {
+        setTheme(!root.classList.contains('dark'));
+      });
+
+      menuButton.addEventListener('click', () => {
+        const hidden = mobileMenu.classList.toggle('hidden');
+        menuButton.setAttribute('aria-expanded', String(!hidden));
+      });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      copyEmail.addEventListener('click', async () => {
+        const email = 'pedroernestopgoncalves@gmail.com';
+        try {
+          await navigator.clipboard.writeText(email);
+          const original = copyEmail.innerHTML;
+          copyEmail.innerHTML = `
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          `;
+          setTimeout(() => {
+            copyEmail.innerHTML = original;
+          }, 1200);
+        } catch {
+          window.location.href = `mailto:${email}`;
+        }
+      });
+    </script>
+  </body>
+</html>
