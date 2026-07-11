@@ -382,6 +382,15 @@
               <i class="si si-github text-lg"></i>
             </a>
             <a
+              href="https://medium.com/@pedroernestopgoncalves"
+              target="_blank"
+              rel="noreferrer"
+              class="icon-btn rounded-[2px] p-2 transition hover:border-[rgba(62,234,154,0.55)] hover:text-[var(--cp-green)]"
+              aria-label="Medium Pedro Ernesto"
+            >
+              <i class="si si-medium text-lg"></i>
+            </a>
+            <a
               href="https://www.linkedin.com/in/pedro-ernesto-goncalves/"
               target="_blank"
               rel="noreferrer"
@@ -391,22 +400,6 @@
               <i class="si si-linkedin text-lg"></i>
             </a>
           </div>
-
-          <button
-            id="themeToggle"
-            class="icon-btn rounded-[2px] p-2 transition hover:border-[rgba(110,198,255,0.55)] hover:text-[var(--cp-blue-hover)]"
-            aria-label="Toggle theme"
-            type="button"
-          >
-            <svg id="themeIcon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v1m0 16v1m8.5-8.5h1M3.5 12h1m13.435 5.435.707.707M5.858 5.858l.707.707m0 11.314-.707.707m11.314-11.314.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              />
-            </svg>
-          </button>
 
           <button
             id="menuButton"
@@ -433,6 +426,9 @@
           <div class="flex items-center gap-3 pt-2">
             <a href="https://github.com/PedrocaOBanido" target="_blank" rel="noreferrer" class="nav-link text-[var(--cp-blue)]">
               <i class="si si-github text-xl"></i>
+            </a>
+            <a href="https://medium.com/@pedroernestopgoncalves" target="_blank" rel="noreferrer" class="nav-link text-[var(--cp-green)]">
+              <i class="si si-medium text-xl"></i>
             </a>
             <a href="https://www.linkedin.com/in/pedro-ernesto-goncalves/" target="_blank" rel="noreferrer" class="nav-link text-[var(--cp-gold)]">
               <i class="si si-linkedin text-xl"></i>
@@ -962,34 +958,9 @@
     </footer>
 
     <script>
-      const root = document.documentElement;
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
       const menuButton = document.getElementById('menuButton');
       const mobileMenu = document.getElementById('mobileMenu');
       const copyEmail = document.getElementById('copyEmail');
-
-      const sunIcon = `
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.5-8.5h1M3.5 12h1m13.435 5.435.707.707M5.858 5.858l.707.707m0 11.314-.707.707m11.314-11.314.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-      `;
-
-      const moonIcon = `
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646a9.003 9.003 0 0011.708 11.708z" />
-      `;
-
-      const setTheme = (isDark) => {
-        root.classList.toggle('dark', isDark);
-        themeIcon.innerHTML = isDark ? moonIcon : sunIcon;
-        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-        localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
-      };
-
-      const savedTheme = localStorage.getItem('portfolio-theme');
-      setTheme(savedTheme ? savedTheme === 'dark' : true);
-
-      themeToggle.addEventListener('click', () => {
-        setTheme(!root.classList.contains('dark'));
-      });
 
       menuButton.addEventListener('click', () => {
         const hidden = mobileMenu.classList.toggle('hidden');
